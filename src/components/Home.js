@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import marked from 'marked';
 import Parser from 'html-react-parser';
+import 'bootstrap/dist/css/bootstrap.css';
 
-import styles from './Home.css';
-import { initialText } from './text';
+import { styles } from './Home_style';
+import { initialText } from './initialText';
+
 
 const renderer = new marked.Renderer();
 
@@ -27,11 +29,11 @@ export default class Home extends Component {
 		return (
 			<div className="container">
 				<div className="row">
-					<h1 className={styles.markdownTitle}>Markdown Previewer</h1>
+					<h1 style={styles.title}>Markdown Previewer</h1>
 					<div className="col-md-6">
-						<textarea rows="25" onChange={this.textUpdate} className={`${styles.markdownTextarea} form-control`}>{this.state.text}</textarea>
+						<textarea rows="25" onChange={this.textUpdate} className="form-control" style={styles.textArea}>{this.state.text}</textarea>
 					</div>
-					<div id={'foo'} className={`${styles.markdownPreview} col-md-6`}>
+					<div id={'foo'} className="col-md-6">
 						{Parser(marked(this.state.text))}
 					</div>
 				</div>

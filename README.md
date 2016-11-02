@@ -1,2 +1,2 @@
 # markdown previewer
-demo: http://markdown-lutfi.pe.hu/
+demo: https://dwicao.github.io/markdown-previewer/
